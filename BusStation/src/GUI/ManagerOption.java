@@ -32,6 +32,8 @@ public class ManagerOption extends javax.swing.JFrame {
         addTripButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         logoutButton = new javax.swing.JButton();
+        assignTripButton1 = new javax.swing.JButton();
+        showTripButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +74,26 @@ public class ManagerOption extends javax.swing.JFrame {
             }
         });
 
+        assignTripButton1.setBackground(new java.awt.Color(51, 51, 51));
+        assignTripButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        assignTripButton1.setForeground(new java.awt.Color(255, 255, 255));
+        assignTripButton1.setText("Assign a Trip");
+        assignTripButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assignTripButton1ActionPerformed(evt);
+            }
+        });
+
+        showTripButton.setBackground(new java.awt.Color(51, 51, 51));
+        showTripButton.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        showTripButton.setForeground(new java.awt.Color(255, 255, 255));
+        showTripButton.setText("ShowTrips");
+        showTripButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showTripButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -80,27 +102,33 @@ public class ManagerOption extends javax.swing.JFrame {
                 .addContainerGap(142, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(157, 157, 157))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(addTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(removeTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(removeTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(assignTripButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(showTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(108, 108, 108))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(228, 228, 228))))
+                        .addGap(228, 228, 228))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(162, 162, 162))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(removeTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addComponent(assignTripButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(showTripButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(logoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -127,6 +155,7 @@ public class ManagerOption extends javax.swing.JFrame {
 
     private void removeTripButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTripButtonActionPerformed
         ManagerRemoveTrips managerRemoveTrips = new ManagerRemoveTrips();
+        managerRemoveTrips.add();
         this.setVisible(false);
         managerRemoveTrips.setVisible(true);
     }//GEN-LAST:event_removeTripButtonActionPerformed
@@ -136,6 +165,21 @@ public class ManagerOption extends javax.swing.JFrame {
         this.setVisible(false);
         managerLogin.setVisible(true);
     }//GEN-LAST:event_logoutButtonActionPerformed
+
+    private void assignTripButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignTripButton1ActionPerformed
+        ManagerAssignaTrip managerAssignaTrip = new ManagerAssignaTrip();
+        managerAssignaTrip.addDrivers();
+        managerAssignaTrip.add();
+        this.setVisible(false);
+        managerAssignaTrip.setVisible(true);
+    }//GEN-LAST:event_assignTripButton1ActionPerformed
+
+    private void showTripButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showTripButtonActionPerformed
+        ManagerShowTrips managerShowTrips = new ManagerShowTrips();
+        managerShowTrips.add();
+        this.setVisible(false);
+        managerShowTrips.setVisible(true);
+    }//GEN-LAST:event_showTripButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,9 +225,11 @@ public class ManagerOption extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTripButton;
+    private javax.swing.JButton assignTripButton1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton removeTripButton;
+    private javax.swing.JButton showTripButton;
     // End of variables declaration//GEN-END:variables
 }

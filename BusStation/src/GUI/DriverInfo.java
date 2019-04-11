@@ -5,6 +5,8 @@
  */
 package GUI;
 
+import static bus.Bus.driver;
+
 /**
  *
  * @author ABD-ELRAHMAN
@@ -34,8 +36,8 @@ public class DriverInfo extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         previousButton = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        agelabel = new javax.swing.JLabel();
+        namelabel = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -67,7 +69,7 @@ public class DriverInfo extends javax.swing.JFrame {
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        previousButton.setBackground(new java.awt.Color(153, 255, 204));
+        previousButton.setBackground(new java.awt.Color(51, 51, 51));
         previousButton.setForeground(new java.awt.Color(255, 255, 255));
         previousButton.setText("Previuos");
         previousButton.addActionListener(new java.awt.event.ActionListener() {
@@ -76,15 +78,13 @@ public class DriverInfo extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("......");
+        agelabel.setBackground(new java.awt.Color(0, 0, 0));
+        agelabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        agelabel.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("......");
+        namelabel.setBackground(new java.awt.Color(0, 0, 0));
+        namelabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        namelabel.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,8 +98,8 @@ public class DriverInfo extends javax.swing.JFrame {
                         .addGap(174, 174, 174))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(agelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(127, 127, 127))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
@@ -117,11 +117,11 @@ public class DriverInfo extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                    .addComponent(namelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(agelabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(112, 112, 112)
                 .addComponent(previousButton, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
@@ -147,6 +147,26 @@ public class DriverInfo extends javax.swing.JFrame {
         driverOption.setVisible(true);
     }//GEN-LAST:event_previousButtonActionPerformed
 
+    public void  add(){
+        if(DriverLogin.nameee.equals("Ali")){
+            namelabel.setText(DriverLogin.nameee);
+            agelabel.setText(Integer.toString(driver.get(0).getAge()));
+        }
+         if(DriverLogin.nameee.equals("Tarek")){
+            namelabel.setText(DriverLogin.nameee);
+            agelabel.setText(Integer.toString(driver.get(1).getAge()));
+        }      
+        
+        if(DriverLogin.nameee.equals("Mohamed")){
+            namelabel.setText(DriverLogin.nameee);
+            agelabel.setText(Integer.toString(driver.get(2).getAge()));
+        }
+        
+        if(DriverLogin.nameee.equals("Magdy")){
+            namelabel.setText(DriverLogin.nameee);
+            agelabel.setText(Integer.toString(driver.get(0).getAge()));
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -190,14 +210,14 @@ public class DriverInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel agelabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel namelabel;
     private javax.swing.JButton previousButton;
     // End of variables declaration//GEN-END:variables
 }
