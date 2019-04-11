@@ -121,12 +121,14 @@ public class DriverOption extends javax.swing.JFrame {
 
     private void myinformationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myinformationButtonActionPerformed
         DriverInfo driverInfo = new DriverInfo();
+        driverInfo.add();
         this.setVisible(false);
         driverInfo.setVisible(true);
     }//GEN-LAST:event_myinformationButtonActionPerformed
 
     private void assignedTripsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignedTripsButtonActionPerformed
         DriverAssiTrips driverAssiTrips = new DriverAssiTrips();
+        driverAssiTrips.add();
         this.setVisible(false);
         driverAssiTrips.setVisible(true);
     }//GEN-LAST:event_assignedTripsButtonActionPerformed
